@@ -1,31 +1,71 @@
-.container {
-  padding: 0 2rem;
-}
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 
-.main {
+.container {
   min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+  /* padding: 0 0.5rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.footer {
+.subtitle {
+  text-align: center;
+  color: #cc7351;
+}
+
+.layouttitle {
+  height: 10vh;
+  max-height: 100px;
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.header {
+  /* background-color: #fff; */
+  padding-top: 10px;
+  height: 10vh;
+  max-height: 100px;
+  width: 100vw;
+  display: flex;
   justify-content: center;
   align-items: center;
+  /* box-shadow: 0px 2px 7px gray; */
+}
+
+.images {
+  /* margin-right: -100px; */
+  width: 60vw;
+  object-fit: cover;
+}
+
+.main {
+  /* padding: 5rem 0; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer img {
+  margin-left: 0.5rem;
 }
 
 .footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
 }
 
 .title a {
@@ -40,9 +80,11 @@
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  margin-left: 60px;
+  margin-top: 10px;
+  line-height: 1;
+  font-size: 1.8rem;
+  color: #dd2803;
 }
 
 .title,
@@ -51,7 +93,6 @@
 }
 
 .description {
-  margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -59,7 +100,7 @@
 .code {
   background: #fafafa;
   border-radius: 5px;
-  padding: 0.75rem;
+  /* padding: 0.75rem; */
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
@@ -71,10 +112,12 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  margin-top: 3rem;
 }
 
 .card {
   margin: 1rem;
+  flex-basis: 45%;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -82,7 +125,6 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
 }
 
 .card:hover,
@@ -92,7 +134,7 @@
   border-color: #0070f3;
 }
 
-.card h2 {
+.card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
@@ -104,8 +146,308 @@
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+  height: 5.5em;
+}
+
+.menucontainer {
+  width: 40vw;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menubutton {
+  font-family: "Barlow", sans-serif;
+  /* width: 100px; */
+  margin-left: 24px;
+  padding: 10px;
+  color: #000;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 24px;
+  outline: none;
+}
+
+.menubutton:hover {
+  border-bottom: 3px solid #dd2803;
+  color: #dd2803;
+}
+
+.menubutton:focus {
+  border-bottom: 3px solid #dd2803;
+  color: #dd2803;
+}
+
+.welcomecard {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 60px;
+  margin-top: -10vh;
+}
+
+.reserveCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 30vh;
+  background-color: #fbe690;
+}
+
+.reserveBtn {
+  font-family: "Barlow", sans-serif;
+  font-size: 24px;
+  letter-spacing: 5px;
+  width: 400px;
+  height: 50px;
+  border: none;
+  background-color: #dd2803;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 30px 10px 30px;
+  outline: none;
+}
+
+.reserveBtn:hover {
+  cursor: pointer;
+  letter-spacing: 7px;
+}
+
+.inputForm {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border: none;
+  background-color: #fbe690;
+  border-radius: 20px;
+  width: 30vw;
+}
+
+.inputField {
+  font-size: 18px;
+  width: 20vw;
+  height: 40px;
+  margin-top: 20px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  border-bottom: 2px solid #dd2803;
+}
+
+.loginTitle {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #dd2803;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.loginButton {
+  font-size: 18px;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  background-color: #dd2803;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 20vw;
+  height: 40px;
+  box-shadow: 0px 2px 2px #303030;
+  outline: none;
+  cursor: pointer;
+}
+
+.registerButton {
+  outline: none;
+  border: none;
+  background-color: #fbe690;
+  width: 20vw;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  cursor: pointer;
+}
+
+.suggestImage {
+  width: 25vw;
+  height: 25vw;
+  object-fit: cover;
+}
+
+.suggestImage:hover {
+  animation-name: expands;
+  animation-duration: 1s;
+}
+
+@keyframes expands {
+  0% {
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+  }
+  50% {
+    width: 26vw;
+    height: 26vw;
+    object-fit: cover;
+  }
+}
+
+.suggestMenu {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 90vw;
+  padding: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.center {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuName {
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-family: "Kanit", sans-serif;
+}
+
+.reserveTitle {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #dd2803;
+  font-size: 64px;
+  font-weight: bold;
+  margin-top: 0vh;
+}
+
+.reserveBox {
+  width: 40vw;
+  padding: 50px 50px 30px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6ded3;
+  margin-bottom: 60px;
+}
+
+.reserveInputRow {
+  width: 32vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.reserveInputField {
+  margin-bottom: 20px;
+  width: 15vw;
+  height: 50px;
+  border: none;
+  background-color: #fff;
+  border-left: 3px solid #dd2803;
+  font-size: 18px;
+  padding-left: 20px;
+  outline: none;
+  font-family: "Kanit", sans-serif;
+}
+.reserveButton {
+  font-family: "Barlow", sans-serif;
+  font-size: 24px;
+  letter-spacing: 5px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color: #dd2803;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 30px 10px 30px;
+  outline: none;
+  cursor: pointer;
+}
+.reserve2Button {
+  margin-top: 20px;
+  font-family: "Barlow", sans-serif;
+  font-size: 24px;
+  letter-spacing: 5px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color: #dd2803;
+  color: #fbe690;
+  border-radius: 20px;
+  padding: 10px 30px 10px 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.reserveList {
+  margin-top: 20px;
+  width: 15vw;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.reserveListRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 10px;
+}
+
+.miniButton {
+  background-color: #fff;
+  border: none;
+  color: #dd2803;
+  cursor: pointer;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+}
+
+.weathercard {
+  padding: 50px;
+  width: 90vw;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.temp {
+  margin-top: 8px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #dd2803;
+}
+
+.weather {
+  margin-left: 60px;
+  margin-top: 0px;
+  font-size: 48px;
+  color: #686868;
+  font-family: "Kanit", sans-serif;
 }
 
 @media (max-width: 600px) {
