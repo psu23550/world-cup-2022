@@ -36,22 +36,9 @@ const Home = ({ token }) => {
   return (
     <Layout token={token}>
       <div className="mt-40 flex flex-col justify-center text-center">
-        <p className="text-5xl font-bold">
+        <p className="ml-60 text-5xl text-white font-extrabold">
           WELCOME TO
         </p>
-        <p
-          className="mt-5 text-7xl font-bold"
-        >
-          THAI CRAFT BEER
-        </p>
-        <button
-          onClick={() => {
-            router.push("/reserve");
-          }}
-          className="bg-green-600 p-3 text-white font-bold text-xl rounded-lg mt-10"
-        >
-          Knowledge Base
-        </button>
       </div>
     </Layout>
   );
