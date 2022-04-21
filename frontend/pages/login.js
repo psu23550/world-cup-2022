@@ -78,30 +78,29 @@ const Login = ({ token }) => {
   return (
     <Layout userName={username} token={token}>
       <div className={styles.inputForm}>
-        <p className={styles.loginTitle}>{checkType()}</p>
+        <p className="text-red-600 font-sans font-meduim tracking-[3px] text-2xl" >{checkType()}</p>
         <input
           placeholder="Username"
-          className={styles.inputField}
+          className="mt-7 p-2 w-80 rounded-sm"
           onChange={(e) => setUsername(e.target.value)}
         ></input>
         <input
           placeholder="Email"
-          className={styles.inputField}
+          className="mt-7 p-2 w-80 rounded-sm"
           onChange={(e) => setEmail(e.target.value)}
         ></input>
         <input
           type="password"
           placeholder="Password"
-          className={styles.inputField}
+          className="mt-7 p-2 w-80 rounded-sm"
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button className={styles.loginButton} onClick={submit}>
+        <button className="p-3 mt-3 font-sans font-light text-xl text-red-600 hover:text-orange-200" onClick={submit}>
           {checkType()}
         </button>
-        {status}
+        <p className="text-white">{status}</p>
         <button
-          style={{ marginTop: "0px" }}
-          className={styles.registerButton}
+          className="p-3 font-sans font-light text-xs text-red-600 hover:text-orange-200"
           onClick={changeType}
         >
           {checkType() == "LOGIN" ? "REGISTER" : "LOGIN"}

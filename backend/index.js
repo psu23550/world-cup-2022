@@ -1,12 +1,3 @@
-const admin = require("firebase-admin");
-const serviceAccount = require("../backend/tata.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
-
-const firebasedb = admin.firestore();
-
 const express = require("express"),
   app = express(),
   passport = require("passport"),
@@ -18,7 +9,7 @@ const bcrypt = require("bcrypt");
 
 const db = require("./database.js");
 let users = db.users;
-
+let news = db.news;
 require("./passport.js");
 
 const router = require("express").Router(),
@@ -94,85 +85,11 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/reserve", async (req, res) => {
+router.get("/news", async (req, res) => {
   try {
-    // console.log("header ", req.headers.search);
-    let dataList = [];
-    let newList = [];
-    const snapshot = await firebasedb.collection("reserve").get();
-    await snapshot.forEach((doc) => {
-      // console.log("doc.data()", doc.id, "=>", doc.data());
-      let dataNew = {
-        id: doc.id,
-        data: doc.data(),
-      };
-      dataList.push(dataNew);
-    });
-    console.log(dataList);
-    console.log("header ", req.headers.search);
-    if (req.headers.search !== "admin") {
-      newList = dataList.filter(
-        (data) => data.data.username === req.headers.search
-      );
-    } else {
-      newList = dataList;
-    }
-
-    res.status(200).json({ newList });
+    res.status(200).json({ news });
   } catch {
     res.status(422).json({ message: "Cannot reserve" });
-  }
-});
-
-router.post("/addReserve", async (req, res) => {
-  console.log(req.body);
-  const ref = firebasedb.collection("reserve").doc();
-  try {
-    await ref
-      .set({
-        reserveName: req.body.reserveName,
-        telephone: req.body.telephone,
-        date: req.body.date,
-        time: req.body.time,
-        username: req.body.username,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    res.status(200).json({ message: "Add to Firebase" });
-  } catch {
-    res.status(404).json({ message: "Cannot reserve" });
-  }
-});
-
-router.put("/updateReserve", async (req, res) => {
-  console.log(req.body);
-  const ref = firebasedb.collection("reserve").doc(req.body.editID);
-
-  try {
-    await ref.update({
-      reserveName: req.body.reserveName,
-      telephone: req.body.telephone,
-      date: req.body.date,
-      time: req.body.time,
-    });
-    res.status(200).json({ message: "update to Firebase" });
-  } catch {
-    res.status(404).json({ message: "Cannot update" });
-  }
-});
-
-router.get("/delete", async (req, res) => {
-  console.log("DELETE ", req.headers.deleteid);
-  const ref = firebasedb.collection("reserve").doc(req.headers.deleteid);
-  try {
-    await ref.delete();
-    res.status(200).json({ message: "delete from Firebase" });
-  } catch {
-    res.status(404).json({ message: "Cannot delete" });
   }
 });
 
